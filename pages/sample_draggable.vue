@@ -1,12 +1,26 @@
 <template>
-  <div id="app">
-    <draggable v-model="items" draggable=".item" tag="ul">
-      <li v-for="item in items" :key="item.id" class="item">
-        No.{{item.id}} {{item.name}}
-      </li>
-    </draggable>
+  <div id="container">
+    <h2>group1</h2>
+    <div class="group">
+      <draggable v-model="items1" draggable=".item" tag="ul" group="items">
+        <li v-for="item in items1" :key="item.id" class="item">
+          No.{{item.id}} {{item.name}}
+        </li>
+      </draggable>
+      <div v-if="items1 == false">No Member</div>
+    </div>
+
+    <h2>group2</h2>
+    <div class="group">
+      <draggable v-model="items2" draggable=".item" tag="ul" group="items">
+        <li v-for="item in items2" :key="item.id" class="item">
+          No.{{item.id}} {{item.name}}
+        </li>
+      </draggable>
+      <div v-if="items2 == false">No Member</div>
+    </div>
     <center>
-      <v-btn elevation="2" color="primary" @click="showItems">順番表示</v-btn>
+      <v-btn elevation="2" color="primary" @click="showItems">group1 - 順番表示</v-btn>
     </center>
   </div>
 </template>
@@ -22,7 +36,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      items: [
+      items1: [
         {
           id: 1,
           name: "ITEM 1"
@@ -39,12 +53,30 @@ export default Vue.extend({
           id: 4,
           name: "ITEM 4"
         },
+      ],
+      items2: [
+        {
+          id: 5,
+          name: "ITEM 5"
+        },
+        {
+          id: 6,
+          name: "ITEM 6"
+        },
+        {
+          id: 7,
+          name: "ITEM 7"
+        },
+        {
+          id: 8,
+          name: "ITEM 8"
+        },
       ]
     }
   },
   methods: {
     showItems() {
-      alert(this.items.map(val => { return val.id }))
+      alert(this.items1.map(val => { return val.id }))
     }
   }
 })
@@ -54,14 +86,16 @@ export default Vue.extend({
   ul {
   list-style-type: none;
   }
-
   li {
     cursor: pointer;
     padding: 10px;
     border: solid #ddd 1px;
   }
-  
   center {
-    margin: 5em;
+    margin: 2em;
+  }
+  .group {
+    height: 100%;
+    margin: 2em;
   }
 </style>
