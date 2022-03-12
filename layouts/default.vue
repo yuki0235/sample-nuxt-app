@@ -106,6 +106,16 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'sampleDraggable',
+          to: '/sample_draggable'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'sampleChart',
+          to: '/sample_chart'
         }
       ],
       miniVariant: false,
