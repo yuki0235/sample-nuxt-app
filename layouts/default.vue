@@ -116,6 +116,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'sampleChart',
           to: '/sample_chart'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'doughnutChart',
+          to: '/doughnut_chart'
         }
       ],
       miniVariant: false,
