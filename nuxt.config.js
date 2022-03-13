@@ -41,7 +41,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/moment',
   ],
 
   // moment.js locale settings
