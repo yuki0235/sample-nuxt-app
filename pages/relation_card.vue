@@ -7,6 +7,17 @@
       </p>
     </v-card>
     <v-container>
+      <v-switch label="frontend" hide-details>
+        <v-btn>frontend</v-btn>
+      </v-switch>
+      <v-switch label="backend" hide-details>
+        <v-btn>backend</v-btn>
+      </v-switch>
+      <v-switch label="infrastructure" hide-details>
+        <v-btn>infrastructure</v-btn>
+      </v-switch>
+    </v-container>
+    <v-container>
       <v-row>
         <v-col v-for="card in cards" :key="card.id" :cols="3">
           <v-card :color="color(card.type)">
