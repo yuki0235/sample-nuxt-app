@@ -19,8 +19,8 @@
     </v-container>
     <v-container>
       <v-row>
-        <v-col v-for="card in cards" :key="card.id" :cols="3">
-          <v-card v-show="isDisplay(card.type)" :color="color(card.type)">
+        <v-col v-for="card in cards" :key="card.id" :cols="3" v-if="isDisplay(card.type)">
+          <v-card :color="color(card.type)">
             <v-card-title>{{ card.name }}</v-card-title>
             <v-card-subtitle>{{ card.type }}</v-card-subtitle>
             <v-btn class="white" text @click="card.show = !card.show" width="100%">
