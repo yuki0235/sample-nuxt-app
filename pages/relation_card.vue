@@ -7,20 +7,20 @@
       </p>
     </v-card>
     <v-container>
-      <v-switch label="frontend" hide-details>
+      <v-switch v-model="checked" value="frontend" label="frontend" hide-details>
         <v-btn>frontend</v-btn>
       </v-switch>
-      <v-switch label="backend" hide-details>
+      <v-switch v-model="checked" value="backend" label="backend" hide-details>
         <v-btn>backend</v-btn>
       </v-switch>
-      <v-switch label="infrastructure" hide-details>
+      <v-switch v-model="checked" value="infrastructure" label="infrastructure" hide-details>
         <v-btn>infrastructure</v-btn>
       </v-switch>
     </v-container>
     <v-container>
       <v-row>
         <v-col v-for="card in cards" :key="card.id" :cols="3">
-          <v-card :color="color(card.type)">
+          <v-card v-show="isDisplay(card.type)" :color="color(card.type)">
             <v-card-title>{{ card.name }}</v-card-title>
             <v-card-subtitle>{{ card.type }}</v-card-subtitle>
             <v-btn class="white" text @click="card.show = !card.show" width="100%">
@@ -40,6 +40,7 @@ export default {
   data() {
     return {
       title: "Relation Card",
+      checked: [],
       cards: [
         {
           id: 1,
@@ -83,6 +84,9 @@ export default {
         case "infrastructure":
           return "light-green lighten-5"
       }
+    },
+    isDisplay(type) {
+      return this.checked.includes(type)
     }
   }
 }
