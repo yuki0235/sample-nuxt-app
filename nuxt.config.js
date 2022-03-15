@@ -85,5 +85,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      // IDEでデバッグを行う設定
+      // WebStormでは動作確認済ですが、VSCodeでは未確認です
+      config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map'
+    }
   }
 }
