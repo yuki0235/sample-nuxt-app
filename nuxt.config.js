@@ -31,7 +31,10 @@ export default {
     {
       src: '@/plugins/plugin',
       ssr: false,
-    }
+    },
+    { src: '@/plugins/localStorage',
+      ssr: false
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,6 +45,11 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
+
+  // moment.js locale settings
+  moment: {
+    locales: ['ja']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
