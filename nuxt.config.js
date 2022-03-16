@@ -47,13 +47,19 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    ['@nuxtjs/dotenv', { filename: `.env_${process.env.NODE_ENV}` }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+  },
+
+  // dotenv module configuration
+  env: {
+    NODE_ENV: process.env.NODE_ENV
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
