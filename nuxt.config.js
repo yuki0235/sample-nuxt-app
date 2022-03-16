@@ -56,7 +56,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
-    ['@nuxtjs/dotenv', { filename: `.env_${process.env.NODE_ENV}` }]
+    ['@nuxtjs/dotenv', { filename: `.env_${process.env.NODE_ENV}` }],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

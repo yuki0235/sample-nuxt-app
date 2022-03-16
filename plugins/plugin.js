@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { Doughnut, Line, mixins } from 'vue-chartjs';
+import movable from 'v-movable'
 const { reactiveProp } = mixins;
 
 Vue.component('doughnut-chart', {
@@ -24,3 +25,5 @@ Vue.component('line-chart', {
     this.renderChart(this.chartData, this.options)
   }
 });
+
+Vue.use(movable)
