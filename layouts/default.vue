@@ -129,6 +129,11 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
+          title: 'execute_api',
+          to: '/execute_api'
+        },
+        {
+          icon: 'mdi-chart-bubble',
           title: 'relation_card',
           to: '/relation_card'
         }

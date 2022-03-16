@@ -31,7 +31,10 @@ export default {
     {
       src: '@/plugins/plugin',
       ssr: false,
-    }
+    },
+    { src: '@/plugins/localStorage',
+      ssr: false
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,6 +45,11 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
+
+  // moment.js locale settings
+  moment: {
+    locales: ['ja']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -83,5 +91,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      // IDEでデバッグを行う設定
+      // WebStormでは動作確認済ですが、VSCodeでは未確認です
+      config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map'
+    }
   }
 }
