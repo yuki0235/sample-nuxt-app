@@ -1,14 +1,35 @@
 <template>
-  <div class="container">
-    <movable class="testmove" posTop="0" posLeft="0"><span>Shift Key Behavior</span></movable>
-  </div>
+  <v-main>
+    <v-container>
+      <v-row>
+        <v-col ref="parentEl">
+          <v-card v-for="card in cards" :key="card.id">
+            <movable class="testmove" target="parentEl"><span>{{ card.name }}</span></movable>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      //
+      cards: [
+        {
+          id: 1,
+          name: "A",
+        },
+        {
+          id: 1,
+          name: "B",
+        },
+        {
+          id: 1,
+          name: "C",
+        }
+      ]
     }
   }
 }
@@ -21,7 +42,7 @@ export default {
   top: 0;
   height: 150px;
   width: 150px;
-  margin: 200px;
+  margin: 10px;
   background: orange;
   color: white;
 }
