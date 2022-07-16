@@ -136,6 +136,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'relation_card',
           to: '/relation_card'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'modal',
+          to: '/modal'
         }
       ],
       miniVariant: false,
